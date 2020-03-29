@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/bacteria.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2e3131" />
+  <meta name="description" content="Visualising COVID-19/Wuhan virus/coronavirus cases and cluster zones in Singapore">
+  <meta name="keywords" content="covid-19,wuhan,coronavirus,virus,singapore,map">
+
+  <meta property="og:title" content="COVID-19 Singapore Tracker">
+  <meta property="og:description" content="Visualising COVID-19/Wuhan virus/coronavirus cases and cluster zones in Singapore">
+  <meta property="og:image" content="https://covid-tracker.com/og_image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://covid-tracker.com/">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:title" content="COVID-19 Singapore Tracker">
+  <meta name="twitter:description" content="Visualising COVID-19/Wuhan virus/coronavirus cases and cluster zones in Singapore">
+  <meta name="twitter:image" content="https://covid-tracker.com/twitter_image.png">
+  <meta name="twitter:image:alt" content="COVID-19">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@wentjun">
+  <meta name="twitter:createor" content="@wentjun">
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/bacteria-apple.png" />
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet' />
+  <link rel="preconnect dns-prefetch" href="https://www.google-analytics.com" crossorigin>
+  <link rel="preconnect dns-prefetch" href="https://events.mapbox.com" crossorigin>
+  <link rel="preconnect dns-prefetch" href="https://connect.facebook.net" crossorigin>
+
+  <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>COVID-19 Tracker (SG)</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '244765676526994',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v6.0'
+    });
+
+    FB.AppEvents.logPageView();
+
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+</html>
